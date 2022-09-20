@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Timers;
 using CoreGraphics;
 using Foundation;
@@ -68,8 +69,8 @@ namespace GCloudiPhone
         void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             InvokeOnMainThread(() =>
-            {
-                BackgroundImage.Image = CacheHolder.Instance.NextImage();
+            {   //Sa mainstoryboard-a je izbrisana pozadinska slika
+                //BackgroundImage.Image = CacheHolder.Instance.NextImage();
             });
         }
 
@@ -82,10 +83,17 @@ namespace GCloudiPhone
             NavigationItem.RightBarButtonItem = null;
             NavigationItem.LeftBarButtonItem = null;
 
-            ShadowView.Layer.ShadowColor = UIColor.Black.CGColor;
-            ShadowView.Layer.ShadowOffset = new CGSize(5.0d, 5.0d);
-            ShadowView.Layer.ShadowRadius = 5.0f;
-            ShadowView.Layer.ShadowOpacity = 0.7f;
+            //ShadowView.Layer.ShadowColor = UIColor.Black.CGColor;
+            //ShadowView.Layer.ShadowOffset = new CGSize(5.0d, 5.0d);
+            //ShadowView.Layer.ShadowRadius = 5.0f;
+            //ShadowView.Layer.ShadowOpacity = 0.7f;
+
+            //Menjamo boju pozadine i navigation item
+            View.BackgroundColor = UIColor.FromRGB(255, 205, 103);
+            //UINavigationBar.Appearance.BackgroundColor = UIColor.FromRGB(255, 205, 103);
+            //NavigationItem.Title = "";
+            this.NavigationController.SetNavigationBarHidden(true, true);
+
         }
 
         public override void ViewWillAppear(bool animated)
@@ -107,8 +115,6 @@ namespace GCloudiPhone
 
             }
 
-
-
             //var span = totalPointsNew + " Punkte";
             //var indexOfPunkte = span.IndexOf(" Punkte");
 
@@ -117,7 +123,8 @@ namespace GCloudiPhone
             InvokeInBackground(() =>
             {
                 var backgroundImage = CacheHolder.Instance.NextImage();
-                InvokeOnMainThread(() => BackgroundImage.Image = backgroundImage);
+                //Sa mainstoryboard-a je izbrisana pozadinska slika
+                //InvokeOnMainThread(() => BackgroundImage.Image = backgroundImage);
             });
 
             timer.Start();
@@ -180,11 +187,11 @@ namespace GCloudiPhone
             InvokeOnMainThread(() => LoyaltyCardImage.Image = loyaltyCard);
         }
 
-        partial void StoreButton_TouchUpInside(UIButton sender)
-        {
-            TabBarController.TabBar.Hidden = false;
-            ((TabBarController)TabBarController).ChangeSelectedItem(1);
-        }
+        //partial void StoreButton_TouchUpInside(UIButton sender)
+        //{
+        //    TabBarController.TabBar.Hidden = false;
+        //    ((TabBarController)TabBarController).ChangeSelectedItem(1);
+        //}
 
         //Store list and store details
         partial void MapButton_TouchUpInside(UIButton sender)
@@ -206,11 +213,11 @@ namespace GCloudiPhone
             ((TabBarController)TabBarController).ChangeSelectedItem(3);
         }
 
-        partial void EBillButton_TouchUpInside(UIButton sender)
-        {
-            TabBarController.TabBar.Hidden = false;
-            ((TabBarController)TabBarController).ChangeSelectedItem(3);
-        }
+        //partial void EBillButton_TouchUpInside(UIButton sender)
+        //{
+        //    TabBarController.TabBar.Hidden = false;
+        //    ((TabBarController)TabBarController).ChangeSelectedItem(3);
+        //}
 
 
         //OurProducts web view
@@ -269,5 +276,7 @@ namespace GCloudiPhone
             ((TabBarController)TabBarController).ChangeSelectedItem(7
                 );
         }
+
+       
     }
 }

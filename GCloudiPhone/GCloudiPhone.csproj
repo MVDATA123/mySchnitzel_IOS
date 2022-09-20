@@ -836,6 +836,23 @@
     <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\Icon-App-83.5x83.5%402x-1.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcon-old.appiconset\foodjet.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcon-1.appiconset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\Aktionen.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\Aktionen.imageset\medal.png" />
+    <ImageAsset Include="Images.xcassets\SpecialProducts.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\SpecialProducts.imageset\ebill_logo.png" />
+    <ImageAsset Include="Images.xcassets\Map.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\Map.imageset\icons8_marker3.png" />
+    <ImageAsset Include="Images.xcassets\OnLineWebShop.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\OnLineWebShop.imageset\ebill_logo_outlined.png" />
+    <ImageAsset Include="Images.xcassets\OurProducts.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\OurProducts.imageset\icons8_shop2.png" />
+    <ImageAsset Include="Images.xcassets\OurMeny.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\OurMeny.imageset\speisekarte.png" />
+    <ImageAsset Include="Images.xcassets\Settings.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\Settings.imageset\sett.png" />
+    <ImageAsset Include="Images.xcassets\Settings.imageset\sett-1.png" />
+    <ImageAsset Include="Images.xcassets\LogoMain.imageset\Contents.json" />
+    <ImageAsset Include="Images.xcassets\LogoMain.imageset\mainHeader.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GCloud.Shared\GCloud.Shared.csproj">
@@ -966,6 +983,14 @@
     <Folder Include="Resources\Images.xcassets\ProfileIconTall.imageset\" />
     <Folder Include="Resources\Images.xcassets\ReportIconColored.imageset\" />
     <Folder Include="Resources\Images.xcassets\SettingsIconFilled.imageset\" />
+    <Folder Include="Images.xcassets\Aktionen.imageset\" />
+    <Folder Include="Images.xcassets\SpecialProducts.imageset\" />
+    <Folder Include="Images.xcassets\Map.imageset\" />
+    <Folder Include="Images.xcassets\OnLineWebShop.imageset\" />
+    <Folder Include="Images.xcassets\OurProducts.imageset\" />
+    <Folder Include="Images.xcassets\OurMeny.imageset\" />
+    <Folder Include="Images.xcassets\Settings.imageset\" />
+    <Folder Include="Images.xcassets\LogoMain.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="GoogleService-Info.plist" />
