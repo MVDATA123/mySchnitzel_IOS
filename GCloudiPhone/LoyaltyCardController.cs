@@ -32,7 +32,7 @@ namespace GCloudiPhone
         private readonly IAuthService _authService;
 
 
-        protected SidebarController SidebarController
+        protected SidebarController SidebarControllerlogi
         {
             get
             {
@@ -46,7 +46,7 @@ namespace GCloudiPhone
 
         public LoyaltyCardController(IntPtr handle) : base(handle)
         {
-            menuBarButton = new UIBarButtonItem(UIImage.FromBundle("MenuIcon"), UIBarButtonItemStyle.Plain, (sender, e) => SidebarController.ToggleMenu());
+            //menuBarButton = new UIBarButtonItem(UIImage.FromBundle("MenuIcon"), UIBarButtonItemStyle.Plain, (sender, e) => SidebarController.ToggleMenu());
             loginBarButton = new UIBarButtonItem(UIImage.FromBundle("LoginIcon"), UIBarButtonItemStyle.Plain, (sender, e) => TabBarController.PerformSegue("LoginSegue", this));
 
             _userRepository = new UserRepository(DbBootstraper.Connection);
@@ -78,7 +78,7 @@ namespace GCloudiPhone
         {
             base.ViewDidLoad();
 
-            LoginMessageLabel.RemoveFromSuperview();
+            //LoginMessageLabel.RemoveFromSuperview();
             LoginButton.RemoveFromSuperview();
             NavigationItem.RightBarButtonItem = null;
             NavigationItem.LeftBarButtonItem = null;
@@ -115,6 +115,9 @@ namespace GCloudiPhone
 
             }
 
+
+
+
             //var span = totalPointsNew + " Punkte";
             //var indexOfPunkte = span.IndexOf(" Punkte");
 
@@ -132,7 +135,7 @@ namespace GCloudiPhone
             if (((AppDelegate)UIApplication.SharedApplication.Delegate).AuthState == AuthState.Unauthorized)
             {
                 NavigationItem.LeftBarButtonItem = null;
-                View.Add(LoginMessageLabel);
+               // View.Add(LoginMessageLabel);
                 View.Add(LoginButton);
                 //NavigationItem.RightBarButtonItem = loginBarButton; // login dugme vec postoji, tako da je za sada izbaceno ovo bar button dugme
                 LoyaltyCardImage.Image = UIImage.FromBundle("Logo");
@@ -160,7 +163,7 @@ namespace GCloudiPhone
         {
             base.ViewWillDisappear(animated);
 
-            SidebarController.Disabled = true;
+            //SidebarController.Disabled = true;
             timer.Stop();
             timer.Elapsed -= Timer_Elapsed;
 
@@ -168,7 +171,7 @@ namespace GCloudiPhone
 
         public override void ViewDidDisappear(bool animated)
         {
-            LoginMessageLabel.RemoveFromSuperview();
+            //LoginMessageLabel.RemoveFromSuperview();
             LoginButton.RemoveFromSuperview();
             NavigationItem.RightBarButtonItem = null;
             NavigationItem.LeftBarButtonItem = null;
